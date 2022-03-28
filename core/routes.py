@@ -18,7 +18,7 @@ def index():
 
         if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
             flash("Custom Id already exist, pls enter a different custom id")
-            return redirect(url_for(index))
+            return redirect(request.host_url)
 
         if not url:
             flash("URL is required")

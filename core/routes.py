@@ -18,11 +18,11 @@ def index():
 
         if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
             flash("Custom Id already exist, pls enter a different custom id")
-            return redirect(request.host_url)
+            return redirect(url_for('index'))
 
         if not url:
             flash("URL is required")
-            redirect(url_for(index))
+            redirect(url_for('index'))
 
         if not short_id:
             short_id = generate_short_id(8)
@@ -45,4 +45,4 @@ def redirect_url(short_id):
         return redirect(link.original_url)
     else:
         flash("Invalid URL")
-        return redirect(url_for(index))
+        return redirect(url_for('index'))

@@ -1,4 +1,4 @@
-# url_shortner
+# url_shortner https://ulr-shortner.herokuapp.com/
 
 This is application to create customized short URL for the Long URL to convinintly share.
 
